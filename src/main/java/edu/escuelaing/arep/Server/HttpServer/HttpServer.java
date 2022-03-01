@@ -5,9 +5,13 @@ package edu.escuelaing.arep.Server.HttpServer;
 import java.net.*;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class HttpServer {
+
+    public final static Map<String, String> constantemapa = new HashMap<String, String>();
 
     public static void start() throws IOException {
 
@@ -114,5 +118,22 @@ public class HttpServer {
         }
         return 4567;
     }
+
+    public HttpServer() {
+        setTypes();
+    }
+
+    private void setTypes() {
+        for (String[] type : TIPOS) {
+            constantemapa.put(type[0], type[1]);
+        }
+    }
+
+    public final static String[][] TIPOS = {
+            {"html", "text/html"},
+            {"jpg", "image/jpg"},
+            {"js", "text/javascript"},
+            {"jpeg", "image/jpeg"},
+            {"png", "image/png"}};
 
 }
