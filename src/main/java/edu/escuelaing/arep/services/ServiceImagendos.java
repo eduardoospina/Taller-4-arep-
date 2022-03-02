@@ -13,16 +13,25 @@ import java.net.URISyntaxException;
 import static edu.escuelaing.arep.server.HttpServer.constantemapa;
 
 
+/**
+ * clase que maneja los servicios de imagen dos
+ * @author eduardo ospina
+ */
 @Component
 public class ServiceImagendos {
+
+    /**
+     * metodo que maneja el retorno de una imagen
+     * @return String, imagen que se guarda
+     */
     @RequestMapping("imagendos")
-    public static String computeImage() throws URISyntaxException {
-        String responseContent;
-        String extensionUri = "png";
+    public static String Imagenobtener() throws URISyntaxException {
+        String imagencontenido;
+        String URIImagen = "png";
         URI URIimagen = new URI("/Img/index2.png");
 
-        responseContent = "HTTP/1.1 200 OK \r\n"
-                + "Content-Type: " + constantemapa.get(extensionUri) + "\r\n"
+        imagencontenido = "HTTP/1.1 200 OK \r\n"
+                + "Content-Type: " + constantemapa.get(URIImagen) + "\r\n"
                 + "\r\n";
 
         File file = new File("src/main/resources/" + URIimagen.getPath());
@@ -30,14 +39,14 @@ public class ServiceImagendos {
             BufferedImage bi = ImageIO.read(file);
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             DataOutputStream dataOutputStream = new DataOutputStream(HttpServer.outputStream);
-            ImageIO.write(bi, extensionUri, byteArrayOutputStream);
-            dataOutputStream.writeBytes(responseContent);
+            ImageIO.write(bi, URIImagen, byteArrayOutputStream);
+            dataOutputStream.writeBytes(imagencontenido);
             dataOutputStream.write(byteArrayOutputStream.toByteArray());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return responseContent;
+        return imagencontenido;
     }
 }

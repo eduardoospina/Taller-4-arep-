@@ -13,7 +13,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-
+/**
+ * clase de servidor Http manejado con Java. maneja las variables que se utilizan en las clases.
+ * @author  eduardo ospina
+ */
 public class HttpServer {
 
     public final static Map<String, String> constantemapa = new HashMap<String, String>();
@@ -21,6 +24,9 @@ public class HttpServer {
     private URI UriaUse;
 
 
+    /**
+     * Metodo que nicializa el servidor http incluyendo sus condicionales y excepciones.
+     */
     public void start() throws IOException, URISyntaxException {
 
 
@@ -117,12 +123,21 @@ public class HttpServer {
 
 
 
+    /**
+     * metodo que invoca el metodo EciSpringBoot.getinstance().invokeservice(service)
+     * @param service tipo string que se quiere invocar.
+     * @return String como retorna invokeservice e mecispringboot
+     */
     private String invokeService(String service) {
 
         return EciSpringBoot.getInstance().invokeService(service);
     }
 
 
+    /**
+     * metodo que obtiene el puerto que se utiliza para crear el httpserver
+     * @return Int el puerto deseado
+     */
     private static int getPort() {
         if (System.getenv("PORT") != null) {
             return Integer.parseInt(System.getenv("PORT"));

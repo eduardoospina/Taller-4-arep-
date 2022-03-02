@@ -3,9 +3,17 @@ package edu.escuelaing.arep.services;
 import edu.escuelaing.arep.Anotaciones.Component;
 import edu.escuelaing.arep.Anotaciones.RequestMapping;
 
-
+/**
+ * clase que maneja los servicios de pagina prueba serviciohoracreacion
+ * @author eduardo ospina
+ */
 @Component
 public class ServiceHoracreacion {
+
+    /**
+     * metodo returna la pgina html de prueba hora de creacion
+     * @return String, como formato html.
+     */
     @RequestMapping("fecha")
     public static String date() {
         return "HTTP/1.1 200 OK\r\n"

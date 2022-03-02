@@ -3,8 +3,18 @@ package edu.escuelaing.arep.services;
 import edu.escuelaing.arep.Anotaciones.Component;
 import edu.escuelaing.arep.Anotaciones.RequestMapping;
 
+
+/**
+ * clase que maneja los servicios de la pagina no valida
+ * @author eduardo ospina
+ */
 @Component
 public class ServicenoEncontrado {
+
+    /**
+     * metodo que retorna la pagina html cuando la url no es valida
+     * @return String, html que se pide
+     */
     @RequestMapping("noEncontrado")
     public static String noEncontrado() {
         return "HTTP/1.1 200 OK\r\n"

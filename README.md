@@ -124,6 +124,20 @@ soportado y genere error al correr el servidor. Por lo que aun tiene muchos punt
 -   javascript
 -   java
 
+### Javadocs:
+
+se genera el Javadoc:
+
+```maven
+mvn javadoc:javadoc
+```
+
+![](https://i.postimg.cc/zXMGSS1y/Capture1.png)
+
+![](https://i.postimg.cc/NjHfN9gp/Capture2.png)
+
+![](https://i.postimg.cc/02JsvTLN/Capture3.png)
+
 ## Despliegue Heroku:
 
 [![ProjectDesign](https://www.herokucdn.com/deploy/button.png)](https://taller-4arep.herokuapp.com/)

@@ -1,0 +1,74 @@
+@options
+@packages
+@argfile
+-classpath
+'C:/Users/eduardo.ospina.LABINFO/.m2/repository/org/slf4j/slf4j-simple/1.7.35/slf4j-simple-1.7.35.jar;C:/Users/eduardo.ospina.LABINFO/.m2/repository/org/slf4j/slf4j-api/1.7.35/slf4j-api-1.7.35.jar'
+-encoding
+'Cp1252'
+-protected
+-source
+'1.8'
+-sourcepath
+'C:/Users/eduardo.ospina.LABINFO/Documents/Taller-4-arep-/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2022. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/eduardo.ospina.LABINFO/Documents/Taller-4-arep-/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'HTTPServer 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' 'C:/Users/eduardo.ospina.LABINFO/Documents/Taller-4-arep-/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'HTTPServer 1.0-SNAPSHOT API'
+edu.escuelaing.arep.Anotaciones
+edu.escuelaing.arep
+edu.escuelaing.arep.Ejercicios
+edu.escuelaing.arep.server
+edu.escuelaing.arep.services
+'C:/Users/eduardo.ospina.LABINFO/Documents/Taller-4-arep-/src/main/java/edu/escuelaing/arep/Anotaciones/Component.java'
+'C:/Users/eduardo.ospina.LABINFO/Documents/Taller-4-arep-/src/main/java/edu/escuelaing/arep/Anotaciones/RequestMapping.java'
+'C:/Users/eduardo.ospina.LABINFO/Documents/Taller-4-arep-/src/main/java/edu/escuelaing/arep/Anotaciones/Service.java'
+'C:/Users/eduardo.ospina.LABINFO/Documents/Taller-4-arep-/src/main/java/edu/escuelaing/arep/CorrerServidor.java'
+'C:/Users/eduardo.ospina.LABINFO/Documents/Taller-4-arep-/src/main/java/edu/escuelaing/arep/EciSpringBoot.java'
+'C:/Users/eduardo.ospina.LABINFO/Documents/Taller-4-arep-/src/main/java/edu/escuelaing/arep/Ejercicios/InvokeMain.java'
+'C:/Users/eduardo.ospina.LABINFO/Documents/Taller-4-arep-/src/main/java/edu/escuelaing/arep/Ejercicios/PrintMembers.java'
+'C:/Users/eduardo.ospina.LABINFO/Documents/Taller-4-arep-/src/main/java/edu/escuelaing/arep/Ejercicios/Pruebas.java'
+'C:/Users/eduardo.ospina.LABINFO/Documents/Taller-4-arep-/src/main/java/edu/escuelaing/arep/Ejercicios/RunTests.java'
+'C:/Users/eduardo.ospina.LABINFO/Documents/Taller-4-arep-/src/main/java/edu/escuelaing/arep/Ejercicios/Test.java'
+'C:/Users/eduardo.ospina.LABINFO/Documents/Taller-4-arep-/src/main/java/edu/escuelaing/arep/server/HttpServer.java'
+'C:/Users/eduardo.ospina.LABINFO/Documents/Taller-4-arep-/src/main/java/edu/escuelaing/arep/services/MiniSpring.java'
+'C:/Users/eduardo.ospina.LABINFO/Documents/Taller-4-arep-/src/main/java/edu/escuelaing/arep/services/ServiceEstadoCreacion.java'
+'C:/Users/eduardo.ospina.LABINFO/Documents/Taller-4-arep-/src/main/java/edu/escuelaing/arep/services/ServiceHoracreacion.java'
+'C:/Users/eduardo.ospina.LABINFO/Documents/Taller-4-arep-/src/main/java/edu/escuelaing/arep/services/ServiceImagendos.java'
+'C:/Users/eduardo.ospina.LABINFO/Documents/Taller-4-arep-/src/main/java/edu/escuelaing/arep/services/ServiceImagenuno.java'
+'C:/Users/eduardo.ospina.LABINFO/Documents/Taller-4-arep-/src/main/java/edu/escuelaing/arep/services/ServicenoEncontrado.java'
+C:\Users\eduardo.ospina.LABINFO\.m2\repository\org\slf4j\slf4j-simple\1.7.35\slf4j-simple-1.7.35.jar = 1644410289288
+C:\Users\eduardo.ospina.LABINFO\.m2\repository\org\slf4j\slf4j-api\1.7.35\slf4j-api-1.7.35.jar = 1644410289416
+C:\Users\eduardo.ospina.LABINFO\Documents\Taller-4-arep-\src\main\java = 1646224257976
+C:\Users\eduardo.ospina.LABINFO\Documents\Taller-4-arep-\target\site\apidocs\allclasses-index.html = 1646227341201
+C:\Users\eduardo.ospina.LABINFO\Documents\Taller-4-arep-\target\site\apidocs\allclasses.html = 1646227341232
+C:\Users\eduardo.ospina.LABINFO\Documents\Taller-4-arep-\target\site\apidocs\allpackages-index.html = 1646227341201
+C:\Users\eduardo.ospina.LABINFO\Documents\Taller-4-arep-\target\site\apidocs\constant-values.html = 1646227341014
+C:\Users\eduardo.ospina.LABINFO\Documents\Taller-4-arep-\target\site\apidocs\deprecated-list.html = 1646227341232
+C:\Users\eduardo.ospina.LABINFO\Documents\Taller-4-arep-\target\site\apidocs\element-list = 1646227340904
+C:\Users\eduardo.ospina.LABINFO\Documents\Taller-4-arep-\target\site\apidocs\help-doc.html = 1646227341248
+C:\Users\eduardo.ospina.LABINFO\Documents\Taller-4-arep-\target\site\apidocs\index-all.html = 1646227341201
+C:\Users\eduardo.ospina.LABINFO\Documents\Taller-4-arep-\target\site\apidocs\index.html = 1646227341232
+C:\Users\eduardo.ospina.LABINFO\Documents\Taller-4-arep-\target\site\apidocs\member-search-index.js = 1646227341201
+C:\Users\eduardo.ospina.LABINFO\Documents\Taller-4-arep-\target\site\apidocs\member-search-index.zip = 1646227341201
+C:\Users\eduardo.ospina.LABINFO\Documents\Taller-4-arep-\target\site\apidocs\overview-summary.html = 1646227341248
+C:\Users\eduardo.ospina.LABINFO\Documents\Taller-4-arep-\target\site\apidocs\overview-tree.html = 1646227341139
+C:\Users\eduardo.ospina.LABINFO\Documents\Taller-4-arep-\target\site\apidocs\package-search-index.js = 1646227341154
+C:\Users\eduardo.ospina.LABINFO\Documents\Taller-4-arep-\target\site\apidocs\package-search-index.zip = 1646227341185
+C:\Users\eduardo.ospina.LABINFO\Documents\Taller-4-arep-\target\site\apidocs\script.js = 1646227341264
+C:\Users\eduardo.ospina.LABINFO\Documents\Taller-4-arep-\target\site\apidocs\search.js = 1646227341264
+C:\Users\eduardo.ospina.LABINFO\Documents\Taller-4-arep-\target\site\apidocs\stylesheet.css = 1646227341264
+C:\Users\eduardo.ospina.LABINFO\Documents\Taller-4-arep-\target\site\apidocs\type-search-index.js = 1646227341201
+C:\Users\eduardo.ospina.LABINFO\Documents\Taller-4-arep-\target\site\apidocs\type-search-index.zip = 1646227341201

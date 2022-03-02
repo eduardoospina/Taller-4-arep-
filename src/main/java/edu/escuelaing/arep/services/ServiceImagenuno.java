@@ -13,8 +13,17 @@ import java.net.URISyntaxException;
 import static edu.escuelaing.arep.server.HttpServer.constantemapa;
 
 
+/**
+ * clase que maneja los servicios de imagen uno
+ * @author eduardo ospina
+ */
 @Component
 public class ServiceImagenuno {
+
+    /**
+     * metodo que maneja el retorno de una imagen
+     * @return String, imagen que se guarda
+     */
     @RequestMapping("imagenuno")
     public static String computeImage() throws URISyntaxException {
         String responseContent;

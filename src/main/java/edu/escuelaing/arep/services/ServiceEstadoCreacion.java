@@ -3,9 +3,17 @@ package edu.escuelaing.arep.services;
 import edu.escuelaing.arep.Anotaciones.Component;
 import edu.escuelaing.arep.Anotaciones.RequestMapping;
 
-
+/**
+ * clase que maneja los servicios de la pagina de estadodecreacion.
+ * @author eduardo.ospina
+ */
 @Component
-public class ServiceStatus{
+public class ServiceEstadoCreacion {
+
+    /**
+     * metodo que maneja el retorno de html de la pagina del servicio de estado de creacion
+     * @return String, html pedido
+     */
     @RequestMapping("Estado")
     public static String status() {
         return "HTTP/1.1 200 OK\r\n"

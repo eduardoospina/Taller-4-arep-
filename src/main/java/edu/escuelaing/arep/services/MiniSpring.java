@@ -4,8 +4,17 @@ import edu.escuelaing.arep.Anotaciones.Component;
 import edu.escuelaing.arep.Anotaciones.RequestMapping;
 
 
+/**
+ * CLase de servicios de prueba MiniSpring
+ * @author eduardo ospina
+ */
 @Component
 public class MiniSpring {
+
+    /**
+     * metodo que returna la pagina html de prueba.
+     * @return String en formato html
+     */
     @RequestMapping("MiniSpring")
     public static String index() {
         return "HTTP/1.1 200 OK\r\n"
