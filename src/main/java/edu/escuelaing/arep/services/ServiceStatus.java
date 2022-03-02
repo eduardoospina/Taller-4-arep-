@@ -22,7 +22,7 @@ public class ServiceStatus{
                 + "<h1>Estado: prueba de funcionamiento path.</h1>"
                 + "</div>"
                 + "<p>"
-                + " Esta funcionando correctamente!"
+                + " El estado de la aplicacion es funcional, el numero de la suerte es 4567, hora 1:03 AM"
                 + "</p>"
                 + "</body>"
                 + "</html>";
