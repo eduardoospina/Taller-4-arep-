@@ -3,6 +3,7 @@ package edu.escuelaing.arep;
 import edu.escuelaing.arep.Anotaciones.Service;
 import edu.escuelaing.arep.Anotaciones.Component;
 import edu.escuelaing.arep.Anotaciones.RequestMapping;
+import edu.escuelaing.arep.server.HttpServer;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,10 +24,6 @@ public class EciSpringBoot {
         String NombredelPackete;
         NombredelPackete = EciSpringBoot.class.getPackage().getName().replace(".","/");
         this.camino = new File("./src/main/java/" + NombredelPackete);
-    }
-
-    private EciSpringBoot(File camino) {
-        this.camino = camino;
     }
 
 
@@ -60,7 +57,6 @@ public class EciSpringBoot {
         if (file.isDirectory()){
             for (File raiz : file.listFiles()){
                 componentes.addAll(searchComponentList(raiz));
-                System.out.println(componentes);
             }
         }
         else{

@@ -2,7 +2,7 @@ package edu.escuelaing.arep.services;
 
 import edu.escuelaing.arep.Anotaciones.Component;
 import edu.escuelaing.arep.Anotaciones.RequestMapping;
-import edu.escuelaing.arep.HttpServer;
+import edu.escuelaing.arep.server.HttpServer;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -10,7 +10,7 @@ import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import static edu.escuelaing.arep.HttpServer.constantemapa;
+import static edu.escuelaing.arep.server.HttpServer.constantemapa;
 
 
 @Component

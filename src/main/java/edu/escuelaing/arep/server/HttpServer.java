@@ -1,4 +1,4 @@
-package edu.escuelaing.arep;
+package edu.escuelaing.arep.server;
 
 
 
@@ -127,7 +127,7 @@ public class HttpServer {
         if (System.getenv("PORT") != null) {
             return Integer.parseInt(System.getenv("PORT"));
         }
-        return 35000;
+        return 4567;
     }
 
     public HttpServer() {
