@@ -138,6 +138,8 @@ mvn javadoc:javadoc
 
 ![](https://i.postimg.cc/02JsvTLN/Capture3.png)
 
+![](https://i.postimg.cc/FHT5VhSD/Capture4.png)
+
 ## Despliegue Heroku:
 
 [![ProjectDesign](https://www.herokucdn.com/deploy/button.png)](https://taller-4arep.herokuapp.com/)
