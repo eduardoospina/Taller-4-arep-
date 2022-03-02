@@ -1,4 +1,4 @@
-package edu.escuelaing.arep.Server.Ejercicios;
+package edu.escuelaing.arep.Ejercicios;
 
 public class Pruebas {
     public void m1(){}

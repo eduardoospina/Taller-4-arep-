@@ -1,35 +1,37 @@
-package edu.escuelaing.arep.Server.HttpServer;
+package edu.escuelaing.arep;
 
-import edu.escuelaing.arep.Server.Anotaciones.Service;
+import edu.escuelaing.arep.Anotaciones.Service;
+import edu.escuelaing.arep.Anotaciones.Component;
+import edu.escuelaing.arep.Anotaciones.RequestMapping;
 
-import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class EciSpringBoot {
-    private Map<String, Method> services = new HashMap<>();
-
+    private Map<String, Method> servicios = new HashMap<>();
     private File camino;
-
-    private static EciSpringBoot instancia = new EciSpringBoot();
+    private static EciSpringBoot _instance = new EciSpringBoot();
 
     private EciSpringBoot(){
         String NombredelPackete;
-        NombredelPackete = EciSpringBoot.class.getPackage().getName().replace(".", "/");
-        //DEFAULT_PATH + NombredelPackete
+        NombredelPackete = EciSpringBoot.class.getPackage().getName().replace(".","/");
         this.camino = new File("./src/main/java/" + NombredelPackete);
+    }
+
+    private EciSpringBoot(File camino) {
+        this.camino = camino;
     }
 
 
     public static EciSpringBoot getInstance() {
-
-        return instancia;
+        return _instance;
     }
 
     public void startServer() {
@@ -37,16 +39,18 @@ public class EciSpringBoot {
         try {
             HttpServer httpServer = new HttpServer();
             httpServer.start();
-        } catch (IOException e) {
+        } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
         }
     }
 
     private void loadComponents() {
-        List<String> componentList = searchComponentList(camino);
+        List<String> componentListSearch = searchComponentList(camino);
 
-        for(String t : componentList) {
-            loadServices(t);
+        if (componentListSearch != null) {
+            componentListSearch.forEach(componentName -> {
+                loadServices(componentName);
+            });
         }
     }
 
@@ -56,6 +60,7 @@ public class EciSpringBoot {
         if (file.isDirectory()){
             for (File raiz : file.listFiles()){
                 componentes.addAll(searchComponentList(raiz));
+                System.out.println(componentes);
             }
         }
         else{
@@ -79,21 +84,28 @@ public class EciSpringBoot {
         try {
             Class Varc = Class.forName(componentes);
 
-            for (Method metodos: Varc.getDeclaredMethods()) {
+            Method[] declaredMethods = Varc.getDeclaredMethods();
+
+            for (Method metodos: declaredMethods) {
                 if (metodos.isAnnotationPresent(Service.class)) {
                     Service anotacion = metodos.getAnnotation(Service.class);
-                    services.put(anotacion.value(), metodos);
+                    servicios.put(anotacion.value(), metodos);
+                }
+                if (metodos.isAnnotationPresent(RequestMapping.class)) {
+                    RequestMapping anotacion = metodos.getAnnotation(RequestMapping.class);
+                    servicios.put(anotacion.value(), metodos);
+
                 }
             }
-        } catch (ClassNotFoundException e) {
+        }catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
 
-    public String invokeService(String serviceName) {
+    public String invokeService(String Servicio) {
         try {
-            if (!services.containsKey(serviceName)) serviceName = "notFound";
-            Method serviceMethod = services.get(serviceName);
+            if (!servicios.containsKey(Servicio)) Servicio = "noEncontrado";
+            Method serviceMethod = servicios.get(Servicio);
             return (String)serviceMethod.invoke(null);
         } catch (IllegalAccessException e) {
             e.printStackTrace();

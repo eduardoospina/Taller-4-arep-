@@ -1,9 +1,14 @@
-package edu.escuelaing.arep.Server.HttpServer;
+package edu.escuelaing.arep;
 
 
 
-import java.net.*;
+import edu.escuelaing.arep.EciSpringBoot;
+
 import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,14 +17,19 @@ import java.util.Map;
 public class HttpServer {
 
     public final static Map<String, String> constantemapa = new HashMap<String, String>();
+    public static OutputStream outputStream;
+    private URI UriaUse;
 
-    public static void start() throws IOException {
+
+    public void start() throws IOException, URISyntaxException {
+
+
 
         ServerSocket serverSocket = null;
         try {
             serverSocket = new ServerSocket(getPort());
         } catch (IOException e) {
-            System.err.println("Could not listen on port: 35000.");
+            System.err.println();
             System.exit(1);
         }
 
@@ -39,14 +49,14 @@ public class HttpServer {
                 System.exit(1);
             }
 
-            String file = "";
 
+            outputStream = clientSocket.getOutputStream();
             PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
             BufferedReader in = new BufferedReader(
                     new InputStreamReader(
                             clientSocket.getInputStream()));
             String inputLine, outputLine;
-            ArrayList<String> request = new ArrayList<String>();
+            ArrayList<String> request = new ArrayList<>();
             while ((inputLine = in.readLine()) != null) {
                 System.out.println("Received: " + inputLine);
                 request.add(inputLine);
@@ -56,21 +66,18 @@ public class HttpServer {
                 }
             }
 
-            URI URIdelRecurso;
-
+            String file;
+            System.out.println(request.get(0));
             file = request.get(0).split(" ")[1];
 
-            try {
-                URIdelRecurso = new URI(file);
-            } catch (URISyntaxException e) {
-                e.printStackTrace();
-            }
+            UriaUse = new URI(file);
+
 
             if (file.startsWith("/Apps/")) {
                 outputLine = invokeService(file.replace("/Apps/", ""));
             }
             else if (file.startsWith("/Img/")) {
-                outputLine = invokeService(file.replace("/img/", ""));
+                outputLine = invokeService(file.replace("/Img/", ""));
             }
             else if (file.length() == 1) {
                 outputLine = "HTTP/1.1 200 OK\r\n"
@@ -83,7 +90,15 @@ public class HttpServer {
                         + "<title>Title of the document</title>\n"
                         + "</head>"
                         + "<body>"
-                        + "Pagina default"
+                        + "<h1>Pagina de inicio</h1>"
+                        + "<h3>Servidor Web en Java, entregar paginas html e imagenes png</h3>"
+                        + "<div></div>"
+                        + "<h3>Links de uso: </h3>"
+                        + "<h3> /Apps/Estado </h3>"
+                        + "<h3> /Apps/fecha </h3>"
+                        + "<h3> /Img/imagenuno </h3>"
+                        + "<h3> /Img/imagendos </h3>"
+                        + "<h3> /MiniSpring </h3>"
                         + "</body>"
                         + "</html>";
             }
@@ -102,13 +117,9 @@ public class HttpServer {
 
 
 
-    private static String invokeService(String service) {
+    private String invokeService(String service) {
 
         return EciSpringBoot.getInstance().invokeService(service);
-    }
-
-    private static boolean Imagenbool(String Uri) {
-        return Uri.equals("png") || Uri.equals("jpg") || Uri.equals("jpge");
     }
 
 
@@ -116,7 +127,7 @@ public class HttpServer {
         if (System.getenv("PORT") != null) {
             return Integer.parseInt(System.getenv("PORT"));
         }
-        return 4567;
+        return 35000;
     }
 
     public HttpServer() {
@@ -135,5 +146,7 @@ public class HttpServer {
             {"js", "text/javascript"},
             {"jpeg", "image/jpeg"},
             {"png", "image/png"}};
+
+
 
 }
