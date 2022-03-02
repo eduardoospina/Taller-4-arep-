@@ -65,11 +65,17 @@ mvn exec:java -Dexec.mainClass="edu.escuelaing.arep.CorrerServidor"
 4) abrirlo en el navegador utilizando localhost con las rutas aplicadas:
 
 ![](https://i.postimg.cc/NfsTdz4J/Capture9.png)
+
 ![](https://i.postimg.cc/3xWGT0z2/Capture10.png)
+
 ![](https://i.postimg.cc/pL7FXXt4/Capture11.png)
+
 ![](https://i.postimg.cc/761GV3Tr/Capture12.png)
+
 ![](https://i.postimg.cc/NMtL5KCJ/Capture13.png)
+
 ![](https://i.postimg.cc/Yq00GK8H/Capture14.png)
+
 ![](https://i.postimg.cc/NfnMRJPr/Capture15.png)
 
 
@@ -87,21 +93,24 @@ se puede lograr ingresando la url:
 **https://taller-4arep.herokuapp.com/**
 
 ![](https://i.postimg.cc/3xnPyNr8/Capture16.png)
+
 ![](https://i.postimg.cc/5trT3rFD/Capture17.png)
+
 ![](https://i.postimg.cc/GtwN0sKQ/Capture18.png)
+
 ![](https://i.postimg.cc/qBySsjBZ/Capture19.png)
+
 ![](https://i.postimg.cc/vHyj3fc8/Capture20.png)
+
 ![](https://i.postimg.cc/W1byPVGQ/Capture21.png)
+
 ![](https://i.postimg.cc/SxTvSPVj/Capture22.png)
-
-
 
 ### Tecnologias Implementadas.
 
 * [Heroku](https://heroku.com) - Plataforma de despliegue en la nube.
 
 * [Maven](https://maven.apache.org/) - Administrador de dependencias.
-
 
 
 ### Extender
